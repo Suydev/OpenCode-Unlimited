@@ -335,12 +335,3 @@ Open an issue with the command you ran and the output. That is enough to start. 
 
 ---
 
-## Disclaimer
-
-Educational and research use only. Not affiliated with, endorsed by, or supported by OpenCode or any of their partners; all trademarks belong to their owners.
-
-- It unlocks no entitlement. The free limit is enforced by OpenCode's servers and stays in force.
-- It does not modify your machine id, your registry, or any system identifier. The identity it rotates is a local file the tool owns.
-- Using it may break a provider's terms of service. That is your responsibility, and so is any consequence, including account restrictions.
-- Provided "as is", with no warranty and no liability for damage, data loss or account action. Use at your own risk.
-- Rights holder and want it gone? Open an issue and it gets removed promptly, no argument.
