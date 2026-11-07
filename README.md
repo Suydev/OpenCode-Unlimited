@@ -335,3 +335,18 @@ Open an issue with the command you ran and the output. That is enough to start. 
 
 ---
 
+## Linux
+
+```bash
+git clone https://github.com/Tazmyan/OpenCode-Unlimited.git
+cd OpenCode-Unlimited
+./install.sh
+```
+
+Open a new terminal afterwards so `opencode-unlimited` is on PATH.
+
+- The CLI is now implemented in Node (`bin/opencode-unlimited.mjs`), reusing the same `lib/*.js` helpers, so every command behaves the same as the Windows build.
+- The same state files under `~/.config/opencode` and `~/.local/share/opencode` are preserved, so existing identity, sessions and ledger carry over.
+- Autostart uses a **systemd user unit** (`opencode-unlimited-watch.service`) instead of the Windows logon task. `opencode-unlimited on` installs it and `off` removes it. Check it with `systemctl --user status opencode-unlimited-watch`, and run `loginctl enable-linger $USER` if you want it to keep running after you log out.
+- Needs Node.js 22.5 or newer, because the `reid`, `model`, `sessions`, `verify` and `reset` commands use Node's built-in SQLite reader. `curl` is optional; egress falls back to `fetch` when it is missing.
+

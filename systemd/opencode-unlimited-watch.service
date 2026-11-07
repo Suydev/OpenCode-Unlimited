@@ -1,0 +1,13 @@
+# Template for the systemd --user watcher unit. __NODE__ and __MJS__ are substituted at install time.
+[Unit]
+Description=OpenCode-Unlimited free-tier watcher
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=__NODE__ __MJS__ watch -follow -auto
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

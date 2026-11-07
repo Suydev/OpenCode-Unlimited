@@ -1,0 +1,13 @@
+#!/bin/sh
+# resolve real path of this script (follow symlinks)
+SELF="$0"
+while [ -h "$SELF" ]; do
+  DIR=$(cd -P "$(dirname "$SELF")" >/dev/null 2>&1 && pwd)
+  SELF=$(readlink "$SELF")
+  case "$SELF" in
+    /*) ;;
+    *) SELF="$DIR/$SELF" ;;
+  esac
+done
+DIR=$(cd -P "$(dirname "$SELF")" >/dev/null 2>&1 && pwd)
+exec node "$DIR/opencode-unlimited.mjs" "$@"
